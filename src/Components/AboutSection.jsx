@@ -112,8 +112,8 @@ export const AboutSection = () => {
   // Programmatic download function
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/Sahil-resume.pdf'; // Must be in public folder
-    link.download = 'Sahil-resume.pdf';
+    link.href = '/Zakir-hasan-Hriday-Resume.pdf'; // Must be in public folder
+    link.download = 'Zakir-hasan-Hriday-Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
