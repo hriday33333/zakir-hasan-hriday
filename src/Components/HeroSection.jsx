@@ -79,13 +79,13 @@ export const HeroSection = () => {
     }
   }, [displayedCode, currentCodeLine]);
 
-  const handleDownloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '/Zakir-Hasan-Hriday-Resume.pdf'; // public folder path
-    link.download = 'Zakir-Hasan-Hriday-Resume.pdf'; // file name when downloaded
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleViewResume = () => {
+    // Open resume in new tab
+    window.open(
+      '/Zakir-hasan-Hriday-Resume.pdf',
+      '_blank',
+      'noopener,noreferrer'
+    );
   };
 
   return (
@@ -192,7 +192,11 @@ export const HeroSection = () => {
               <span className="text-primary font-semibold">
                 high-performance web applications
               </span>{' '}
-             Junior MERN Stack Developer with experience building full-stack applications using React, Node, Express, and MongoDB. Skilled in responsive UIs, REST APIs, JWT authentication, and deploying apps on Vercel/Netlify. Passionate about clean code and contributing to impactful team projects
+              Junior MERN Stack Developer with experience building full-stack
+              applications using React, Node, Express, and MongoDB. Skilled in
+              responsive UIs, REST APIs, JWT authentication, and deploying apps
+              on Vercel/Netlify. Passionate about clean code and contributing to
+              impactful team projects
             </motion.p>
 
             <motion.div
@@ -249,7 +253,7 @@ export const HeroSection = () => {
               </motion.a>
 
               <motion.button
-                onClick={handleDownloadResume}
+                onClick={handleViewResume}
                 className="group relative overflow-hidden px-6 py-4 rounded-xl font-semibold border border-border text-muted-foreground hover:border-primary/30 transition-all duration-300 bg-background/60 backdrop-blur-sm text-sm flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
