@@ -149,7 +149,7 @@ export const Navbar = () => {
       >
         {/* Website Globe Button */}
         <motion.a
-          href="https://avoliq.vercel.app"
+          href="https://benevolent-tiramisu-6e488a.netlify.app/"
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
@@ -168,7 +168,7 @@ export const Navbar = () => {
 
         {/* GitHub Button */}
         <motion.a
-          href="https://github.com/sahilmd01" 
+          href="https://github.com/hriday33333"
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
@@ -187,7 +187,7 @@ export const Navbar = () => {
 
         {/* LinkedIn Button */}
         <motion.a
-          href="https://linkedin.com/in/codewithkinu" 
+          href="https://www.linkedin.com/in/zakir-hasan/"
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
@@ -205,7 +205,7 @@ export const Navbar = () => {
         </motion.a>
 
         {/* YouTube Button */}
-        <motion.a
+        {/* <motion.a
           href="https://www.youtube.com/@codewithkinu"
           target="_blank"
           rel="noopener noreferrer"
@@ -221,7 +221,7 @@ export const Navbar = () => {
           aria-label="YouTube Channel"
         >
           <Youtube className="w-5 h-5" />
-        </motion.a>
+        </motion.a> */}
 
         {/* Music Button */}
         <motion.button

@@ -14,6 +14,7 @@ import {
   User,
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import hriday from '../assets/icons/hriday.jpg';
 
 export const AboutSection = () => {
   const [activeTab, setActiveTab] = useState('personal');
@@ -22,7 +23,7 @@ export const AboutSection = () => {
 
   const achievements = [
     {
-      number: '15+',
+      number: '8+',
       label: 'Projects',
       icon: <Briefcase className="h-5 w-5" />,
       suffix: '',
@@ -34,13 +35,13 @@ export const AboutSection = () => {
       suffix: '+',
     },
     {
-      number: '99',
+      number: '90',
       label: 'Success',
       icon: <Target className="h-5 w-5" />,
       suffix: '%',
     },
     {
-      number: '10',
+      number: '0',
       label: 'Clients',
       icon: <User className="h-5 w-5" />,
       suffix: '+',
@@ -50,41 +51,37 @@ export const AboutSection = () => {
   const techStack = [
     {
       category: 'Frontend',
-      items: [
-        'React',
-        'Next.js',
-        'TypeScript',
-        'JavaScript',
-        'HTML',
-        'Tailwind',
-      ],
+      items: ['React', 'Next.js', 'JavaScript', 'HTML', 'Tailwind'],
     },
-    { category: 'Backend', items: ['Node.js', 'Express', 'Java', 'Python'] },
-    { category: 'Cloud', items: ['AWS', 'Docker', 'Vercel', 'MongoDB'] },
+    {
+      category: 'Backend',
+      items: ['Node.js', 'Express', 'JavaScript', 'Firebase'],
+    },
+    { category: 'Cloud', items: ['Vercel', 'MongoDB'] },
   ];
 
   const features = [
-    'Full-stack expertise',
+    'MERN-stack expertise',
     'Clean, maintainable code',
     'Performance optimization',
     'Agile methodology',
-    '24/7 support',
+
     'Timely delivery',
   ];
 
   const socialLinks = [
     {
       icon: <Github className="h-5 w-5" />,
-      href: 'https://www.github.com/sahilmd01',
+      href: 'https://github.com/hriday33333',
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
-      href: 'https://www.linkedin.com/in/codewithkinu',
+      href: 'https://www.linkedin.com/in/zakir-hasan/',
     },
     { icon: <Twitter className="h-5 w-5" />, href: '#' },
     {
       icon: <Mail className="h-5 w-5" />,
-      href: 'mailto:sahilmd.dev@gmail.com',
+      href: 'zakrhasanhriday@gmail.com',
     },
   ];
 
@@ -92,7 +89,7 @@ export const AboutSection = () => {
     personal:
       "Passionate about creating digital solutions that make a difference. When I'm not coding, I'm exploring new technologies, contributing to open-source, and mentoring aspiring developers.",
     professional:
-      "With 1+ years in full-stack development, I've delivered 15+ successful projects using modern technologies. I specialize in scalable architecture and performance optimization.",
+      "With 1+ years in full-stack development, I've delivered 8+ successful projects using modern technologies. I specialize in scalable architecture and performance optimization.",
     approach:
       'I believe in clean code, thorough testing, and user-centered design. My process emphasizes collaboration, agile methodologies, and continuous improvement.',
   };
@@ -199,8 +196,8 @@ export const AboutSection = () => {
                   <div className="relative flex-shrink-0">
                     <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-4 border-primary/20 shadow-2xl transition-all duration-500 group-hover:border-primary/40 group-hover:scale-105 md:group-hover:scale-110 relative">
                       <img
-                        src="/profile-logo.png"
-                        alt="MD Sahil"
+                        src={hriday}
+                        alt="Hriday"
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute -bottom-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 bg-green-500 rounded-full border-4 border-background flex items-center justify-center">
@@ -212,10 +209,10 @@ export const AboutSection = () => {
                   {/* Achievements */}
                   <div className="flex-1 text-center md:text-left">
                     <h2 className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">
-                      MD Sahil
+                      Zakir Hasan Hriday
                     </h2>
                     <p className="text-primary text-base sm:text-lg font-semibold mb-3 sm:mb-4">
-                      Full Stack Developer
+                      MERN Stack Developer
                     </p>
                     <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
                       {achievements.map((achievement, index) => (

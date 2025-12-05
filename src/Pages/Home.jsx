@@ -1,12 +1,12 @@
-import { Navbar } from "../components/Navbar";
-import { StarBackground } from "@/components/StarBackground";
-import { HeroSection } from "../components/HeroSection";
-import { AboutSection } from "../components/AboutSection";
-import { SkillsSection } from "../components/SkillsSection";
-import { ProjectsSection } from "../components/ProjectsSection";
-import { ContactSection } from "../components/ContactSection";
-import { Footer } from "../components/Footer";
-import { TestimonialSection } from "../components/Testimonial";
+import { StarBackground } from '@/components/StarBackground';
+import { AboutSection } from '../components/AboutSection';
+import { ContactSection } from '../components/ContactSection';
+import { Footer } from '../components/Footer';
+import { HeroSection } from '../components/HeroSection';
+import { Navbar } from '../Components/Navbar';
+import { ProjectsSection } from '../components/ProjectsSection';
+import { SkillsSection } from '../components/SkillsSection';
+import { TestimonialSection } from '../components/Testimonial';
 
 export const Home = () => {
   return (
@@ -25,7 +25,6 @@ export const Home = () => {
         <ProjectsSection />
         <TestimonialSection />
         <ContactSection />
-        
       </main>
 
       {/* Footer */}

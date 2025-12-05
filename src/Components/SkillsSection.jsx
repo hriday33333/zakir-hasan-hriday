@@ -29,9 +29,9 @@ const skills = [
   // Frontend
   { name: "HTML5", level: 95, category: "frontend", icon: "html" },
   { name: "CSS3", level: 90, category: "frontend", icon: "css" },
-  { name: "SASS", level: 85, category: "frontend", icon: "sass" },
+  // { name: "SASS", level: 85, category: "frontend", icon: "sass" },
   { name: "JavaScript", level: 90, category: "frontend", icon: "javascript" },
-  { name: "TypeScript", level: 75, category: "frontend", icon: "typescript" },
+  // { name: "TypeScript", level: 75, category: "frontend", icon: "typescript" },
   { name: "React", level: 90, category: "frontend", icon: "react" },
   { name: "Next.js", level: 75, category: "frontend", icon: "nextjs" },
 
@@ -39,20 +39,20 @@ const skills = [
   { name: "Node.js", level: 90, category: "backend", icon: "nodejs" },
   { name: "Express", level: 85, category: "backend", icon: "express" },
   { name: "MongoDB", level: 90, category: "backend", icon: "mongodb" },
-  { name: "PostgreSQL", level: 65, category: "backend", icon: "postgresql" },
-  { name: "GraphQL", level: 60, category: "backend", icon: "graphql" },
-  { name: "Java", level: 60, category: "backend", icon: "java" },
-  { name: "Python", level: 60, category: "backend", icon: "python" },
+  // { name: "PostgreSQL", level: 65, category: "backend", icon: "postgresql" },
+  // { name: "GraphQL", level: 60, category: "backend", icon: "graphql" },
+  // { name: "Java", level: 60, category: "backend", icon: "java" },
+  // { name: "Python", level: 60, category: "backend", icon: "python" },
 
   // Tools
   { name: "Git", level: 90, category: "tools", icon: "git" },
   { name: "GitHub", level: 90, category: "tools", icon: "github" },
-  { name: "Docker", level: 70, category: "tools", icon: "docker" },
+  // { name: "Docker", level: 70, category: "tools", icon: "docker" },
   { name: "Firebase", level: 80, category: "tools", icon: "firebase" },
   { name: "VS Code", level: 95, category: "tools", icon: "vscode" },
-  { name: "Cleark", level: 90, category: "tools", icon: "cleark" },
-  { name: "SQL", level: 90, category: "tools", icon: "sql" },
-  { name: "MySQL", level: 90, category: "tools", icon: "mysql" },
+  // { name: "Cleark", level: 90, category: "tools", icon: "cleark" },
+  // { name: "SQL", level: 90, category: "tools", icon: "sql" },
+  // { name: "MySQL", level: 90, category: "tools", icon: "mysql" },
 ];
 
 const categories = [
@@ -94,8 +94,8 @@ const SkillBar = ({ level }) => (
       animate={{ width: `${level}%` }}
       transition={{ duration: 1.5, delay: 0.2 }}
       className={`h-full rounded-full ${
-        level > 75 ? 'bg-gradient-to-r from-green-400 to-emerald-500' : 
-        level > 50 ? 'bg-gradient-to-r from-yellow-400 to-amber-500' : 
+        level > 75 ? 'bg-gradient-to-r from-green-400 to-emerald-500' :
+        level > 50 ? 'bg-gradient-to-r from-yellow-400 to-amber-500' :
         'bg-gradient-to-r from-red-400 to-pink-500'
       }`}
     />
@@ -104,7 +104,7 @@ const SkillBar = ({ level }) => (
 
 const InfiniteScrollSkills = ({ skills }) => {
   const duplicatedSkills = [...skills, ...skills, ...skills];
-  
+
   return (
     <div className="overflow-hidden py-8">
       <motion.div
@@ -121,7 +121,7 @@ const InfiniteScrollSkills = ({ skills }) => {
           </div>
         ))}
       </motion.div>
-      
+
       <motion.div
         className="flex gap-8"
         animate={{ x: ["-100%", "0%"] }}
@@ -142,14 +142,14 @@ const InfiniteScrollSkills = ({ skills }) => {
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
-  const filteredSkills = skills.filter(skill => 
+  const filteredSkills = skills.filter(skill =>
     activeCategory === "all" || skill.category === activeCategory
   );
 
   return (
     <section id="skills" className="py-28 px-4 bg-gradient-to-br from-background via-secondary/5 to-background">
       <div className="container mx-auto max-w-6xl">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center mb-20"
@@ -204,8 +204,8 @@ export const SkillsSection = () => {
                           {skill.name}
                         </h3>
                         <span className={`text-sm font-medium px-2 py-1 rounded-full ${
-                          skill.level > 75 ? 'bg-emerald-500/10 text-emerald-500' : 
-                          skill.level > 50 ? 'bg-amber-500/10 text-amber-500' : 
+                          skill.level > 75 ? 'bg-emerald-500/10 text-emerald-500' :
+                          skill.level > 50 ? 'bg-amber-500/10 text-amber-500' :
                           'bg-pink-500/10 text-pink-500'
                         }`}>
                           {skill.level}%
