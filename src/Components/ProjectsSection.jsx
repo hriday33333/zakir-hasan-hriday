@@ -2,21 +2,23 @@ import { ArrowRight, ExternalLink, Github, ChevronUp, Star, Code, ChevronDown, M
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 
+
 const projects = [
   {
     id: 8,
-    title: "GenAxis",
-    category: "AI SaaS ",
-    description: "AI saas webapp build with PERN stack and Intigrated Gemini . OPEN SOURCE ",
-    image: "/projects/project8.png",
-    video: "/projects/videos/genaxix-demo.mp4",
-    tags: ["PERN Stack", "Clerk Auth", "Google Gemini", "Clerk Billing", "OPEN SOURCE"],
-    demoUrl: "https://genaxis.vercel.app",
-    githubUrl: "https://github.com/Sahilmd01/genaxis",
+    title: "TravelEase",
+    category: "Travel Management",
+    description: "TravelEase is a modern travel management platform that lets users browse vehicles and book their trips with ease.",
+    image: "https://i.ibb.co/yn9nFrSH/img3.webp",
+    video: "/projects/20251205-1313-07.4401670.mp4",
+    tags: ["MERN Stack","OPEN SOURCE", "Travel Management", "Vehicle Booking", "Travel Experience Sharing"]
+,
+    demoUrl: "https://friendly-platypus-46a68b.netlify.app/",
+    githubUrl: "https://github.com/hriday33333/TravelEase-Client-Side",
     featured: true,
     accentColor: "from-emerald-500 to-teal-600",
     status: "Live",
-    highlights: ["Image Generation", "Article writer", "Blog Writter","Resume Reviewer"]
+    highlights: ["Browse different vehicles and travel models", "Book your desired travel option easily.", "Share your travel experiences.","Read reviews and experiences from other users."]
   },
   {
     id: 7,
@@ -139,19 +141,19 @@ export const ProjectsSection = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const videoRef = useRef(null);
   const sectionRef = useRef(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"]
   });
-  
+
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
   const opacityBg = useTransform(scrollYProgress, [0, 0.5, 1], [0.1, 0.2, 0.1]);
 
-  const filteredProjects = activeFilter === "All" 
-    ? projects 
+  const filteredProjects = activeFilter === "All"
+    ? projects
     : projects.filter(project => project.category === activeFilter);
-  
+
   const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 3);
 
   const categories = ["All", ...new Set(projects.map(project => project.category))];
@@ -186,8 +188,8 @@ export const ProjectsSection = () => {
   );
 
   return (
-    <section 
-      id="projects" 
+    <section
+      id="projects"
       className="relative min-h-screen py-20 md:py-32 overflow-hidden bg-gradient-to-br from-background via-background to-primary/5"
       ref={sectionRef}
     >
@@ -198,14 +200,14 @@ export const ProjectsSection = () => {
 
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative">
         {/* Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <motion.div 
+          <motion.div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
@@ -216,7 +218,7 @@ export const ProjectsSection = () => {
             My Projects
           </motion.div>
 
-          <motion.h2 
+          <motion.h2
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -227,7 +229,7 @@ export const ProjectsSection = () => {
             <span className="block text-primary">Portfolio</span>
           </motion.h2>
 
-          <motion.p 
+          <motion.p
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -239,7 +241,7 @@ export const ProjectsSection = () => {
         </motion.div>
 
         {/* Simple Filter */}
-        <motion.div 
+        <motion.div
           className="flex justify-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -275,8 +277,8 @@ export const ProjectsSection = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ 
-                  duration: 0.6, 
+                transition={{
+                  duration: 0.6,
                   delay: index * 0.1,
                   type: "spring",
                   stiffness: 100
@@ -286,7 +288,7 @@ export const ProjectsSection = () => {
                 onMouseLeave={() => setHoveredProject(null)}
               >
                 <div className="relative bg-background border border-border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 h-full flex flex-col">
-                  
+
                   {/* Image/Video Section */}
                   <div className="relative h-48 overflow-hidden">
                     <motion.img
@@ -295,11 +297,11 @@ export const ProjectsSection = () => {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
-                    
+
                     {/* Status Badge */}
                     <div className="absolute top-3 right-3">
                       <div className={`px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
-                        project.status === "Live" 
+                        project.status === "Live"
                           ? "bg-emerald-500/20 text-emerald-600 border border-emerald-500/30"
                           : "bg-amber-500/20 text-amber-600 border border-amber-500/30"
                       }`}>
@@ -315,7 +317,7 @@ export const ProjectsSection = () => {
                     </div>
 
                     {/* Hover Actions */}
-                    <motion.div 
+                    <motion.div
                       className="absolute inset-0 bg-black/50 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: hoveredProject === project.id ? 1 : 0 }}
@@ -329,7 +331,7 @@ export const ProjectsSection = () => {
                       >
                         <Play size={20} />
                       </motion.button>
-                      
+
                       {/* Code Button */}
                       <motion.a
                         href={project.githubUrl}
@@ -338,7 +340,7 @@ export const ProjectsSection = () => {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         className={`p-3 rounded-full backdrop-blur-sm border transition-all duration-300 ${
-                          project.githubUrl === "#" 
+                          project.githubUrl === "#"
                             ? "bg-gray-500/50 text-gray-300 border-gray-500/30 cursor-not-allowed"
                             : "bg-white/20 text-white border-white/30 hover:bg-white/30"
                         }`}
@@ -356,13 +358,13 @@ export const ProjectsSection = () => {
                         {project.title}
                       </h3>
                       {project.featured && (
-                        <motion.div 
+                        <motion.div
                           className="flex items-center gap-1 px-2 py-1 rounded-full bg-amber-500/20 text-amber-600 text-xs font-medium border border-amber-500/30"
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
                           transition={{ delay: index * 0.1 + 0.3 }}
                         >
-                          <Star size={12} className="fill-amber-500" /> 
+                          <Star size={12} className="fill-amber-500" />
                           Featured
                         </motion.div>
                       )}
@@ -410,7 +412,7 @@ export const ProjectsSection = () => {
                         <Eye size={16} />
                         {project.demoUrl === "#" ? "Coming Soon" : "Live Demo"}
                       </motion.a>
-                      
+
                       <motion.a
                         href={project.githubUrl}
                         target="_blank"
@@ -440,7 +442,7 @@ export const ProjectsSection = () => {
 
         {/* Load More */}
         {filteredProjects.length > 3 && (
-          <motion.div 
+          <motion.div
             className="text-center mt-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -473,7 +475,7 @@ export const ProjectsSection = () => {
         )}
 
         {/* Simple CTA */}
-        <motion.div 
+        <motion.div
           className="text-center mt-20"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -495,7 +497,7 @@ export const ProjectsSection = () => {
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               I'm always open to discussing new opportunities and interesting projects.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <motion.a
                 href="#contact"
@@ -506,9 +508,9 @@ export const ProjectsSection = () => {
                 Contact Me
                 <ArrowRight size={18} />
               </motion.a>
-              
+
               <motion.a
-                href="https://github.com/sahilmd01"
+                href="https://github.com/hriday33333"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
