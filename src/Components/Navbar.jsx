@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 
 export default function Navbar() {
   return (
@@ -12,7 +12,7 @@ export default function Navbar() {
 
           {/* Right Menu Button (Mobile Only) */}
           <button
-            className="px-4 py-2 bg-primary rounded font-semibold text-gray-900 hover:bg-lime-600 transition md:hidden"
+            className="px-4 py-2  rounded font-semibold bg-lime-600 text-gray-900 hover:bg-primary transition md:hidden"
             onClick={() =>
               document.getElementById('mobile-nav').classList.toggle('hidden')
             }
@@ -23,51 +23,38 @@ export default function Navbar() {
 
         {/* Middle Links (Desktop Only) */}
         <div className="hidden md:flex space-x-8 text-sm font-semibold tracking-wide mt-4 md:mt-0">
-          <a href="#" className="hover:text-primary transition">
+          <NavLink to="/" className="hover:text-lime-600 transition">
             Home
-          </a>
-          <a href="#" className="hover:text-primary transition">
+          </NavLink>
+          <NavLink to="/about" className="hover:text-lime-600 transition">
             About
-          </a>
-          <a href="#" className="hover:text-primary transition">
+          </NavLink>
+          <NavLink to="/services" className="hover:text-lime-600 transition">
             Services
-          </a>
-          <a href="#" className="hover:text-primary transition">
+          </NavLink>
+          <NavLink to="/contact" className="hover:text-lime-600 transition">
             Contact
-          </a>
+          </NavLink>
         </div>
 
         {/* 🔥 Mobile Dropdown Menu */}
-<div
-  id="mobile-nav"
-  className="hidden flex flex-col mt-3 space-y-3 text-sm font-semibold tracking-wide md:hidden bg-black/40 backdrop-blur-md p-4 rounded"
->
-  <Link
-    to="/"
-    className="hover:text-primary transition"
-  >
-    Home
-  </Link>
-  <Link
-    to="/about"
-    className="hover:text-primary transition"
-  >
-    About
-  </Link>
-  <Link
-    to="/services"
-    className="hover:text-primary transition"
-  >
-    Services
-  </Link>
-  <Link
-    to="/contact"
-    className="hover:text-primary transition"
-  >
-    Contact
-  </Link>
-</div>
-
+        <div
+          id="mobile-nav"
+          className="hidden flex flex-col mt-3 space-y-3 text-sm font-semibold tracking-wide md:hidden bg-lime-600/20 dark:bg-lime-600/10  backdrop-blur-md p-4 rounded"
+        >
+          <NavLink to="/" className="hover:text-lime-600 transition">
+            Home
+          </NavLink>
+          <NavLink to="/about" className="hover:text-lime-600 transition">
+            About
+          </NavLink>
+          <NavLink to="/services" className="hover:text-lime-600 transition">
+            Services
+          </NavLink>
+          <NavLink to="/contact" className="hover:text-lime-600 transition">
+            Contact
+          </NavLink>
+        </div>
       </nav>
 
       {/* Background Image */}
@@ -75,8 +62,20 @@ export default function Navbar() {
         <img
           src="https://i.ibb.co/3mnMTkpr/gggggg-removebg-preview.png"
           alt="Designer Background Image"
-          className="h-full w-full md:w-2xl md:ml-[725px]  object-cover opacity-80 dark:opacity-70"
+          className="
+    h-full
+    w-full
+    md:w-2xl
+    md:ml-[725px]
+    object-cover
+    opacity-80
+    dark:opacity-150
+
+    object-center          /* 🔥 Mobile perfect */
+    md:object-bottom       /* 🔥 Desktop এ image নিচে নামে */
+  "
         />
+
         <div className="absolute inset-0 bg-black/60 dark:bg-black/75"></div>
         <h1></h1>
       </div>
@@ -87,13 +86,14 @@ export default function Navbar() {
           {/* Title */}
           <div className="space-y-2">
             <h1 className="text-4xl font-bold tracking-tight">
-              Hi, I am Jane Doe.
+              <span className="text-lime-600">Hi, </span>I am Zakir Hasan{' '}
+              <span className="text-lime-600">Hriday.</span>
             </h1>
 
             <p className="text-lg text-gray-300">
-              I know{' '}
-              <span className="bg-white/20 dark:bg-white/10 px-2 py-1 rounded">
-                UI/UX design
+             
+              <span className="bg-lime-600/20 dark:bg-lime-600/10 px-2 py-1 rounded hover:bg-lime-600">
+                Full Stack Developer
               </span>
             </p>
           </div>
@@ -104,18 +104,18 @@ export default function Navbar() {
               Show Profile
             </button>
 
-            <button className="flex-1 py-3 text-sm font-semibold uppercase tracking-wider bg-primary text-gray-900 rounded transition-colors hover:bg-lime-600">
+            <button className="flex-1 py-3 text-sm font-semibold uppercase tracking-wider bg-lime-600 text-gray-900 hover:bg-primary transition">
               Know More
             </button>
           </div>
         </div>
 
         {/* Down Arrow */}
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <span className="material-icons animate-bounce text-gray-400">
             keyboard_arrow_down
           </span>
-        </div>
+        </div> */}
       </div>
     </div>
   );
