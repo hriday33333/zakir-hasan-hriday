@@ -42,7 +42,7 @@ export const HeroSection = () => {
       icon: <Shield className="h-3 w-3" />,
     },
     {
-      number: '15+',
+      number: '#',
       label: 'Projects Delivered',
       icon: <TrendingUp className="h-3 w-3" />,
     },
