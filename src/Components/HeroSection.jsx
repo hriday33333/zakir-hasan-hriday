@@ -177,7 +177,7 @@ export const HeroSection = () => {
                 transition={{ duration: 8, repeat: Infinity }}
                 style={{ backgroundSize: '200% 100%' }}
               >
-                MARN-Stack Developer
+                MERN-Stack Developer
               </motion.span>
             </motion.h1>
 
