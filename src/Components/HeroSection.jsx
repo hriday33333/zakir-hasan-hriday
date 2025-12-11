@@ -37,7 +37,7 @@ export const HeroSection = () => {
 
   const achievements = [
     {
-      number: '1+',
+      number: '0+',
       label: 'Years in Production',
       icon: <Shield className="h-3 w-3" />,
     },
@@ -48,7 +48,7 @@ export const HeroSection = () => {
     },
     {
       number: '100%',
-      label: 'Client Satisfaction',
+      label: '#',
       icon: <Award className="h-3 w-3" />,
     },
     {
