@@ -1,17 +1,17 @@
+import { useToast } from '@/hooks/use-toast';
+import { cn } from '@/lib/utils';
 import {
+  Github,
   Instagram,
   Linkedin,
+  Loader2,
   Mail,
   MapPin,
   Phone,
   Send,
   Twitter,
-  Github,
-  Loader2
-} from "lucide-react";
-import { cn } from "@/lib/utils";
-import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
+} from 'lucide-react';
+import { useState } from 'react';
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -19,36 +19,36 @@ export const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
   });
 
   const validateForm = () => {
     if (!formData.name.trim()) {
       toast({
-        title: "Name is required",
-        variant: "destructive"
+        title: 'Name is required',
+        variant: 'destructive',
       });
       return false;
     }
 
     if (!formData.email.trim()) {
       toast({
-        title: "Email is required",
-        variant: "destructive"
+        title: 'Email is required',
+        variant: 'destructive',
       });
       return false;
     } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
       toast({
-        title: "Invalid email format",
-        variant: "destructive"
+        title: 'Invalid email format',
+        variant: 'destructive',
       });
       return false;
     }
 
     if (!formData.message.trim() || formData.message.length < 10) {
       toast({
-        title: "Message must be at least 10 characters",
-        variant: "destructive"
+        title: 'Message must be at least 10 characters',
+        variant: 'destructive',
       });
       return false;
     }
@@ -58,9 +58,9 @@ export const ContactSection = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -82,10 +82,11 @@ export const ContactSection = () => {
 
       if (response.ok) {
         toast({
-          title: "Message sent! 🎉",
+          title: 'Message sent! 🎉',
           description: "I'll get back to you within 24 hours.",
-          variant: "success",
-          className: "bg-green-600 text-white dark:bg-green-500 border border-green-700 shadow-lg"
+          variant: 'success',
+          className:
+            'bg-green-600 text-white dark:bg-green-500 border border-green-700 shadow-lg',
         });
         setFormData({ name: '', email: '', message: '' });
       } else {
@@ -93,9 +94,10 @@ export const ContactSection = () => {
       }
     } catch (error) {
       toast({
-        title: "Oops! Something went wrong",
-        description: "Please try again or email me directly at codewithkinu@gmail.com",
-        variant: "destructive"
+        title: 'Oops! Something went wrong',
+        description:
+          'Please try again or email me directly at codewithkinu@gmail.com',
+        variant: 'destructive',
       });
     } finally {
       setIsSubmitting(false);
@@ -103,7 +105,10 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 relative bg-background">
+    <section
+      id="contact"
+      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 relative bg-background"
+    >
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 sm:mb-16">
           <span className="inline-block px-3 py-1 text-xs sm:text-sm font-medium rounded-full bg-primary/10 text-primary mb-3 sm:mb-4">
@@ -113,7 +118,8 @@ export const ContactSection = () => {
             Get In Touch
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind or just want to say hi? My inbox is always open.
+            Have a project in mind or just want to say hi? My inbox is always
+            open.
           </p>
         </div>
 
@@ -131,7 +137,9 @@ export const ContactSection = () => {
                   <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
                 <div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Email</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
+                    Email
+                  </p>
                   <a
                     href="mailto:codewithkinu@gmail.com"
                     className="text-sm sm:text-base font-medium hover:text-primary transition-colors"
@@ -146,9 +154,11 @@ export const ContactSection = () => {
                   <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
                 <div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Phone</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
+                    Phone
+                  </p>
                   <a
-                    href="tel:+919315145594"
+                    href="tel:+88 01613577742"
                     className="text-sm sm:text-base font-medium hover:text-primary transition-colors"
                   >
                     +88 01613577742
@@ -161,7 +171,9 @@ export const ContactSection = () => {
                   <MapPin className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
                 <div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Location</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
+                    Location
+                  </p>
                   <span className="text-sm sm:text-base font-medium">
                     Netrakona, Mymensingh, Bangladesh
                   </span>
@@ -170,28 +182,30 @@ export const ContactSection = () => {
             </div>
 
             <div className="pt-6 sm:pt-8">
-              <h4 className="font-medium mb-3 sm:mb-4 text-xs sm:text-sm text-muted-foreground">Find me on</h4>
+              <h4 className="font-medium mb-3 sm:mb-4 text-xs sm:text-sm text-muted-foreground">
+                Find me on
+              </h4>
               <div className="flex gap-2 sm:gap-3">
                 {[
                   {
                     icon: Linkedin,
-                    label: "LinkedIn",
-                    url: "https://www.linkedin.com/in/zakir-hasan/",
+                    label: 'LinkedIn',
+                    url: 'https://www.linkedin.com/in/zakir-hasan/',
                   },
                   {
                     icon: Twitter,
-                    label: "Twitter",
-                    url: "#",
+                    label: 'Twitter',
+                    url: '#',
                   },
                   {
                     icon: Github,
-                    label: "GitHub",
-                    url: "https://github.com/hriday33333",
+                    label: 'GitHub',
+                    url: 'https://github.com/hriday33333',
                   },
                   {
                     icon: Instagram,
-                    label: "Instagram",
-                    url: "#",
+                    label: 'Instagram',
+                    url: '#',
                   },
                 ].map((social, index) => (
                   <a
@@ -278,8 +292,8 @@ export const ContactSection = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  "w-full flex items-center justify-center gap-2 py-2 sm:py-3 px-4 sm:px-6 rounded-lg sm:rounded-xl bg-gradient-to-r from-primary to-purple-600 text-white font-medium hover:opacity-90 transition-all duration-300 shadow-lg shadow-primary/20 text-sm sm:text-base",
-                  isSubmitting && "opacity-80 cursor-not-allowed"
+                  'w-full flex items-center justify-center gap-2 py-2 sm:py-3 px-4 sm:px-6 rounded-lg sm:rounded-xl bg-gradient-to-r from-primary to-purple-600 text-white font-medium hover:opacity-90 transition-all duration-300 shadow-lg shadow-primary/20 text-sm sm:text-base',
+                  isSubmitting && 'opacity-80 cursor-not-allowed'
                 )}
               >
                 {isSubmitting ? (
