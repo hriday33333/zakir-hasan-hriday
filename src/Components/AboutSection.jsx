@@ -112,8 +112,8 @@ export const AboutSection = () => {
   // Programmatic download function
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/Resume_of_Frontend_Develope_(Zakir-hasan-Hriday).pdf'; // Must be in public folder
-    link.download = 'Resume_of_Frontend_Develope_(Zakir-hasan-Hriday).pdf';
+    link.href = '/Resume_Of_MERN_Stack_Develope_(Zakir-hasan-Hriday)_(1).pdf'; // Must be in public folder
+    link.download = 'Resume_Of_MERN_Stack_Develope_(Zakir-hasan-Hriday)_(1).pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

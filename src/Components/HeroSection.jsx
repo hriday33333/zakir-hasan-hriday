@@ -82,7 +82,7 @@ export const HeroSection = () => {
   const handleViewResume = () => {
     // Open resume in new tab
     window.open(
-      '/Resume_of_Frontend_Develope_(Zakir-hasan-Hriday).pdf',
+      '/Resume_Of_MERN_Stack_Develope_(Zakir-hasan-Hriday)_(1).pdf',
       '_blank',
       'noopener,noreferrer'
     );
